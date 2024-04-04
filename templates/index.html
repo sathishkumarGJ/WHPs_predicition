@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Wound Healing Peptide Prediction Tool</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body alink = "#54A250" link = "#ffffff" vlink = "#ffffff">
+     <div class="login">
+	<h2 style ='color: rgb(250, 247, 247);'> Wound Healing Peptide Prediction Tool</h2>
+	<hr>
+    <br>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="/predict" method="post" enctype="multipart/form-data">
+	<input type="text" name="sequence" placeholder="Enter peptide sequence"  /> <br>
+	<h3 style="color:white;"> Or </h3>
+	<input type="file" name=csvfile accept=".csv"  />
+    <br><br>
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+    <p id="output" style="color:white;">
+   {{ sequence_text }}
+   <br>
+   <br>
+   {{ error_text }}{{ prediction_text }}
+   <br>
+   {{ prediction_text0 }}
+   <br>
+   <hr>
+   </p>
+   <br>
+<img id="bits" src="{{url_for('static', filename='bits_logo_bgr.png')}}" />
+<br>
+<h1>About</h1><hr>
+<p id="para1"  style="color:white;">This tool was developed by Sathish kumar G under the supervision of Professor Arnab Dutta (in collaboration with Professor Debirupa Mitra) of BITS Pilani, Hyderabad Campus.</p>
+<p id= "para1" style="color:white;">This webapp can be used to predict Wound Healing Peptide against the given peptide sequence.  </p>
+<p id= "para1" style="color:white;">This webapp is also capable of accepting input as CSV file containing the peptide sequences as one column. A new csv file conatining the predicted value of the properties as other columns will be automatically downloaded. </p>
+<br> <br>
+<p id="para2" style="color:white;"> The format of output are as follows: </p>
+<ul id="list2" style="color:white;">
+     <li>An error message will be displayed if an invalid sequence is entered.</li><br>
+     </ul>
+
+<br>
+<p id="para2" style="color:white;">The input requirements are as follows - </p>
+<ul id="list1" style="color:white;"> <li>The entered peptide sequence should be in upper case only.</li><br>
+     <li>It should contain only the 20 naturally occuring amino acids </li><br>
+     <li>Example: GLFDVIKKVASVIGLASP </li><br>
+     <li>For uploading a CSV file, the file should only contain sequences as first column without any headers or index numbers. </li><br>
+     
+ 
+     </ul>
+<br>
+<hr>
+<p id="warning" style="color:white;"> This webapp has been develpoed as a part of academic work. We take no responsibility for any damages that may result from its use.</p>
+<p id="email" style="color:white;">For any queries, please send an email to - <br>
+ p20230406@hyderabad.bits-pilani.ac.in <br>arnabdutta@hyderabad.bits-pilani.ac.in
+ <br>debirupa@hyderabad.bits-pilani.ac.in</p>
+<hr>
+</div>
+<br>
+<br>
+<br>
+</body>
+</html>
