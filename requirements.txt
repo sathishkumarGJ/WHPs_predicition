@@ -15,3 +15,4 @@ matplotlib>=3.7.2
 pandas>=2.0.3
 joblib==1.2.0
 modlamp==4.3.0
+propy3==1.1.1
